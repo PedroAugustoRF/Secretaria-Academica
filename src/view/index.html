@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Alunos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <h1>Secretaria Acadêmica</h1>
+    </div>
+    <p class="sub">Cadastro e gestão de alunos</p>
+  </header>
+
+  <main class="layout">
+    <section class="card form-card">
+      <h2 id="form-title">Novo aluno</h2>
+      <form id="aluno-form" autocomplete="off">
+        <input type="hidden" id="aluno-id" />
+
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex.: Maria Silva" required />
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="curso">Curso</label>
+            <input type="text" id="curso" name="curso" placeholder="Ex.: Engenharia" required />
+          </div>
+          <div class="field">
+            <label for="periodo">Período</label>
+            <input type="text" id="periodo" name="periodo" placeholder="Ex.: 3º" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" name="sexo">
+              <option value="">Selecione</option>
+              <option value="F">Feminino</option>
+              <option value="M">Masculino</option>
+              <option value="O">Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" min="0" max="120" placeholder="Ex.: 21" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="nacionalidade">Nacionalidade</label>
+          <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Ex.: Brasileira" />
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" id="submit-btn">Cadastrar aluno</button>
+          <button type="button" class="btn ghost" id="cancel-btn" hidden>Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card list-card">
+      <div class="list-head">
+        <h2>Alunos cadastrados <span class="count" id="count">0</span></h2>
+        <input type="search" id="search" placeholder="Buscar por nome ou curso..." />
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Curso</th>
+              <th>Período</th>
+              <th>Sexo</th>
+              <th>Idade</th>
+              <th>Nacionalidade</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <p class="empty" id="empty">Nenhum aluno cadastrado ainda.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
