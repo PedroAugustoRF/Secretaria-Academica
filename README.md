@@ -125,4 +125,4 @@ Este projeto está sob a licença MIT. Sinta-se livre para usar e modificar.
 
 ## 👤 Autor
 
-Feito por [seu nome aqui].
+Feito por Pedro Augusto.
